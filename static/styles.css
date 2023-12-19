@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+    background: white url("backgroun.jpg") no-repeat;
+    background-size: cover;
+    /* You can adjust other background properties as needed */
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    padding-top: 50px;
+}
+
+p {
+    margin: 0;
+}
+
+
+.explanation_title {
+    text-align: left;
+}
+
+h1 {
+    margin-top: 50px;
+}
+
+
+.explanation {
+    text-align: left;
+}
+
+
+.rules {
+    padding-left: 30px;
+    padding-right: 50px;
+}
+
+.buttonhere {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    width: 200px;
+    background-color: rgb(7, 99, 4);
+    border: 1px solid black;
+
+}
+
+.buttonhere:hover {
+    background-color: rgb(7, 99, 4);
+    border: 1px solid black;
+}
+
+.suitmap {
+    margin-top: 50px;
+    border: 2px solid black;
+    border-radius: 5px;
+}

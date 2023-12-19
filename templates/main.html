@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santa's Ho Hos</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    {% load static %}
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-sm-5">
+
+        </div>
+        <div class="col-sm-7">
+            <div class="countdown">
+                <span id="countdown"></span>
+            </div>
+            <p>🎄🎄🎄Till Christmas!🎄🎄🎄</p> 
+            <script src="countdown.js"></script>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-5">
+
+        </div>
+        <div class="col-sm-7 rules">
+            <h1 class="explanation_title">Santa's Ho Hos</h1>
+            <br>
+
+            <h4 class="explanation_title">Santa's Global Suit Strategy</h4>
+            <p class="explanation">Santa Claus, the jolly gift-giver of the holiday season, is renowned for his ability to deliver presents to millions of children worldwide in a single night. While this miraculous feat is attributed to Santa's magical prowess, there's another aspect of his annual journey that often goes unnoticed - his strategic approach to dealing with the challenges posed by different climates and locations. One particular aspect of this strategy is the presence of Santa suits in cupboards around the world, including one meant for an 8-year-old boy.</p>
+            <br>
+            <h4 class="explanation_title">World Health Organization's Heat Management Strategy</h4>
+            <p class="explanation">The story begins with the World Health Organization (WHO) recognizing Santa's unique role in spreading joy and happiness across the globe during the holiday season. In a world increasingly concerned with health and safety, WHO has been working closely with Santa to ensure his well-being during his demanding Christmas Eve journey. This collaboration led to the development of a comprehensive heat management strategy for Santa's benefit.</p>
+            <br>
+            <h4 class="explanation_title">International Travel Challenges</h4>
+            <p class="explanation">Santa's journey involves traversing various climates, from the icy North Pole to tropical regions like Darwin, Australia. Rapidly adapting to such diverse conditions can be challenging for anyone, even Santa. The heavy Santa suit he wears, iconic with its fur trim and red fabric, can become a hazard in warm and humid climates. The sweat that accumulates as he spreads Christmas cheer can make the roof tiles he traverses extremely slippery.</p>
+            <br>
+            <h4 class="explanation_title">The Role of Santa's Ho Hos</h4>
+            <p class="explanation">To address these challenges, Santa devised a practical solution. He decided to leave spare Santa suits strategically placed in cupboards worldwide. These suits are entrusted to individuals known as "Santa Ho Ho's." These dedicated helpers play a crucial role in Santa's grand mission. They ensure that the spare suits are well-maintained and ready for Santa's use whenever and wherever he needs them.</p>
+            <br>
+            <h6 class="explanation_title" style="font-weight: 500;">Best Practice Adoption</h6>
+            <p class="explanation">The inclusion of these spare Santa suits in cupboards worldwide is not just a matter of convenience; it's a best practice adopted by Santa himself. It allows him to switch into a fresh suit whenever necessary, mitigating the risks associated with sweating in his heavy attire during his visits to warmer regions. This practice ensures that Santa can maintain his trademark agility and safety, no matter where his sleigh lands. In conclusion, the presence of a Santa suit in the cupboard is a testament to Santa's commitment to spreading holiday joy while safeguarding his own well-being. It's not just a matter of tradition; it's part of a carefully thought-out strategy to ensure that Santa can continue to make children's dreams come true, all around the world, in the safest and most magical way possible. So, when you stumble upon that spare Santa suit, remember that it's a symbol of Santa's dedication to bringing happiness to homes worldwide, regardless of the weather outside.</p>           
+        </div>
+        <a href="{% url 'maps' %}" class="btn btn-primary buttonhere">Suit Map</a>
+    </div>
+</div>
+</body>
+</html>
+
+<script>
+    function updateCountdown() {
+        const now = new Date();
+        const christmas = new Date(now.getFullYear(), 11, 25);
+        
+        const timeDifference = christmas - now;
+
+        const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+        const countdownText = `${days}d ${hours.toString().padStart(2, '0')}h ${minutes.toString().padStart(2, '0')}m ${seconds.toString().padStart(2, '0')}s`;
+
+        document.getElementById('countdown').textContent = countdownText;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+</script>
